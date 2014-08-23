@@ -3,8 +3,8 @@
 [![build status][travis-image]][travis-url]
 [![Test coverage][coveralls-image]][coveralls-url]
 
-A restful wrapper around [`request`][request]. Best used as an adapter for
-[dad][dad] data stores.
+A restful wrapper around [`request`][request], meant to be used as an adapter
+for [dad][dad] data stores.
 
 ## Installation
 ```bash
@@ -32,9 +32,8 @@ Since `dad-rest` is just a thin wrapper around request, they behave mostly the
 same. If you're looking for an overview of everything you can pass in the `opts`
 object, you can find it [here][request-docs].
 
-#### .create()
-Send a `PUT` request to the server. Takes `{Object} opts` and
-`{Function} cb` as arguments.
+#### .create(opts, cb)
+Send a `PUT` request to the server.
 ```js
 var opts = {
   url: 'https://api.myurl.com',
@@ -46,9 +45,8 @@ rest.create(opts, function(err, res) {
 });
 ```
 
-#### .read()
-Send a `GET` request to the server. Takes `{Object} opts` and
-`{Function} cb` as arguments.
+#### .read(opts, cb)
+Send a `GET` request to the server.
 ```js
 var opts = {
   url: 'https://api.myurl.com/resource/12345'
@@ -59,9 +57,8 @@ rest.read(opts, function(err, res) {
 });
 ```
 
-#### .update
-Send a `PATCH` request to the server. Takes `{Object} opts` and
-`{Function} cb` as arguments. To complete
+#### .update(opts, cb)
+Send a `PATCH` request to the server.
 ```js
 var opts = {
   url: 'https://api.myurl.com',
@@ -73,7 +70,8 @@ rest.update(opts, function(err, res) {
 });
 ```
 
-#### .delete
+#### .delete(opts, cb)
+Send a `DELETE` request to the server.
 ```js
 var opts = {
   url: 'https://api.myurl.com',
